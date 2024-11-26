@@ -1,8 +1,5 @@
 import User from '#models/user'
 import { HttpContext } from '@adonisjs/core/http'
-import {
-  UserValidator
-} from '#validators/store_user'
 
 export default class AuthController {
   private generateCreditCardCode(taille: number): bigint {
@@ -29,8 +26,7 @@ export default class AuthController {
     userData.cvv = this.generateCreditCardCode(3);
 
     try {
-      const payload = await createPostValidator.validate(userData)//''
-      const user = await User.create(payload);//55
+      const user = await User.create(userData);//55
       return response.status(201).json({
         message: 'Utilisateur créé avec succès',
         user,
