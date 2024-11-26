@@ -30,10 +30,7 @@ export default class extends BaseSchema {
   }
   
 
-  public async down () {
-    this.schema.alterTable(this.tableName, (table) => {
-      
-      // Suppression de la colonne en cas de rollback
-    })
+  async down() {
+    this.schema.dropTable(this.tableName)
   }
 }

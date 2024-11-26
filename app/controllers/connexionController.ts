@@ -1,7 +1,7 @@
 import User from '#models/user'
 import { LoginValidator } from '#validators/Auth/login'
-import type { HttpContext } from '@adonisjs/core/http'
-import hash from '@adonisjs/core/services/hash'
+import { HttpContext } from '@adonisjs/core/http'
+//import hash from '@adonisjs/core/services/hash'
 // Importation du contrat HTTP
 //import type { HttpContextContract } from '@ioc:core/HttpContext';
 
